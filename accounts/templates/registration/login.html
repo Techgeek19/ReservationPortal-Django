@@ -1,0 +1,52 @@
+{% extends 'registration_base.html' %}
+{% load tags %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<!-- <div class="container-fluid"> -->
+    <div class="card bg-dark">
+    <div class="row">
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <div class="col-lg-6 col-md-6 offset-lg-3 offset-md-3 col-sm-12 col-xs-12 alert alert-danger" style="margin-top: 3%; margin-bottom: 3%">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+        <div class="col-lg-6 col-md-6 offset-md-3 mt-5">
+            <h1 style="color: whitesmoke; text-align: center;">Login</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-lg-6 col-md-6 offset-md-3">
+                <form method="post" class="form" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}" />
+                    <div class="row">
+                        <div class="form-group col">
+                            <label style="color: whitesmoke;" for="username">{{ form.username.label }}</label>
+                            {{ form.username | add_css:"form-control" }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label style="color: whitesmoke;" for="password">{{ form.password.label }}</label>
+                            {{ form.password | add_css:"form-control" }}
+                        </div>
+                        </div>
+                    <button class="btn btn-info ml-3 mt-2" type="submit">Login</button>
+                </form>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+
+<style>    .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+}</style>
+
+{% endblock %}

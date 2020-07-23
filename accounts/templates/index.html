@@ -1,0 +1,67 @@
+{% extends 'registration_base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} NoteShare {% endblock %}
+<!-- {% load humanize %} -->
+{% block content %}
+
+  <!-- jumbotron  -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">     
+        <h1  style="text-align: center; margin-top: 94px; color: #d4dce2;;">NoteShare</h1> 
+        <h3 style="text-align: center;color: #a18b78;">A Responsive Notes Sharing Application</h3>
+    </div>
+  </div>
+  <!-- tutup jumbotron -->
+<div class="container-fluid" style="margin-top: 20px; margin-bottom: 50px;">
+    
+    <div class="row text-center">
+        <div class="col">
+            <h1>Steps to follow</h1>
+            <hr style="width: 185px; border: 0.5px solid; margin-bottom: 50px;">
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-6 col-md-3 col-lg-3">
+            <i class="fas fa-user-plus" style="font-size: 50px; margin-bottom: 5%;"></i>
+            <h4>Register</h4>
+            <p>
+                Initial step involves creating your account via register link mentioned above.
+            </p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+            <i class="fas fa-user" style="font-size: 50px; margin-bottom: 5%;"></i>
+            <h4> Login</h4>
+            <p>
+                If you've already registered earlier Login with your credentials to start adding your notes.  
+            </p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+            <i class="fas fa-copy" style="font-size: 50px; margin-bottom: 5%;"></i>
+            <h4>Save Notes</h4>
+            <p>
+                Save notes.. And thats all we want. Keeping it simple, NoteShare has all the tools  you need at one place
+            </p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+            <i class="fas fa-share-square" style="font-size: 50px; margin-bottom: 5%;"></i>
+            <h4>Share</h4>
+            <p>
+                Share your notes with each other without sharing your login credentials
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<style>
+.jumbotron {
+    background-image: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80');
+    background-size: cover;
+    height: 400px;
+    position: relative;
+  }
+  </style>
+{% endblock %}
