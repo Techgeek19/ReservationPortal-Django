@@ -1,0 +1,35 @@
+{% extends 'registration_base.html' %}
+{% load static %}
+{% block title %} Booking List {% endblock %}
+
+{% block content %}
+<body>
+    <div class="container" style="background-color: beige;">
+        <div class="row">
+         
+            
+
+        {% for booking in booking_list %}
+        <div class="col-3">
+    <div class="card my-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title mb-2">{{booking.get_table_category}} Suite</h5>
+          <h6 class="card-subtitle mb-4 text-muted"> (Booking for Table No. {{booking.table.number}})</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Booking FROM</h6>
+          <p class="card-text">{{booking.check_in}}</p>
+          <h6 class="card-subtitle mb-2 text-muted">Booking TO</h6>
+          <p class="card-text">{{booking.check_out}}</p>
+          <a href="{{ booking.get_cancel_booking_url }}" class="card-link">Cancel Booking</a>
+          <a href="/booking/edit/{{booking.id}}" class="card-link">Edit Timings</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+      {% endfor %}
+   
+
+    </div>
+</div>
+</body>
+
+{% endblock %}

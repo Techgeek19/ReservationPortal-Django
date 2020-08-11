@@ -1,14 +1,14 @@
 {% extends 'registration_base.html' %}
 {% load crispy_forms_tags %}
-{% block title %} NoteShare {% endblock %}
+{% block title %} ReservationPortal {% endblock %}
 <!-- {% load humanize %} -->
 {% block content %}
 
   <!-- jumbotron  -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">     
-        <h1  style="text-align: center; margin-top: 94px; color: #d4dce2;;">NoteShare</h1> 
-        <h3 style="text-align: center;color: #a18b78;">A Responsive Notes Sharing Application</h3>
+        <h1  style="text-align: center; margin-top: 94px; color: #d4dce2;;">ReservationPortal</h1> 
+        <h3 style="text-align: center;color: #a18b78;">A Responsive Booking/Reservation Application</h3>
     </div>
   </div>
   <!-- tutup jumbotron -->
@@ -38,24 +38,27 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-3">
-            <i class="fas fa-copy" style="font-size: 50px; margin-bottom: 5%;"></i>
-            <h4>Save Notes</h4>
+            <i class="fas fa-hand-pointer" style="font-size: 50px; margin-bottom: 5%;"></i>
+            <h4>Select Preference</h4>
             <p>
-                Save notes.. And thats all we want. Keeping it simple, NoteShare has all the tools  you need at one place
+                Select your choice of table as per your need or requirement.  
             </p>
         </div>
 
         <div class="col-6 col-md-3 col-lg-3">
-            <i class="fas fa-share-square" style="font-size: 50px; margin-bottom: 5%;"></i>
-            <h4>Share</h4>
+            <i class="fas fa-check-square" style="font-size: 50px; margin-bottom: 5%;"></i>
+            <h4>Book Selection</h4>
             <p>
-                Share your notes with each other without sharing your login credentials
+                Chose date and time as per your need and book your preference.
             </p>
         </div>
     </div>
 </div>
+<div class="text-center mb-5">
+<h3>DEMO CREDENTIAL FOR USER & ADMIN LOGIN</h3> <p> Username: "gaurav" &nbsp; &nbsp; Password: "gauravgaurav" </p>
 
 
+</div>
 <style>
 .jumbotron {
     background-image: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80');
