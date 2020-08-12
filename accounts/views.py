@@ -1,6 +1,6 @@
 from django.contrib.auth import login, authenticate
 from .models import SignUpForm
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth import logout
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
@@ -16,7 +16,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+            return redirect('login')
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
@@ -34,7 +34,8 @@ def change_password(request):
             user = form.save()
             update_session_auth_hash(request, user)  # Important!
             messages.success(request, 'Your password was successfully updated!')
-            return redirect('main')
+            return redirect('/booking_list')
+            messages.success(request, 'Your password was successfully updated!')
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'change_password.html', {
